@@ -6,9 +6,17 @@ This script will let you setup your own VPN server in no more than a minute, eve
 ### Installation
 Run the script and follow the assistant:
 
-`wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`
+1) run the IPV4 enabler first
+2) run the openvn-installer
 
 Once it ends, you can run it again to add more users, remove some of them or even completely uninstall OpenVPN.
+
+3) run the ip tables fixer
+
+also be sure to remove the below lines from (/etc/openvpn/server.conf) to prevent routing all traffic through OpenVPN server
+
+push "redirect-gateway def1 bypass-dhcp"
+push "dhcp-option DNS 10.0.0.2"
 
 ### I want to run my own VPN but don't have a server for that
 You can get a little VPS for just $2.99/month at [Bandwagon Host](https://bandwagonhost.com/aff.php?aff=575&pid=43).
