@@ -18,6 +18,10 @@ also be sure to remove the below lines from (/etc/openvpn/server.conf) to preven
 push "redirect-gateway def1 bypass-dhcp"
 push "dhcp-option DNS 10.0.0.2"
 
+also add the below line to /etc/openvpn/server.conf to push the route to VPC instances to the clients ( change the IP address accoring to VPC Network)
+
+push "route 10.0.0.0 255.255.0.0"
+
 ### I want to run my own VPN but don't have a server for that
 You can get a little VPS for just $2.99/month at [Bandwagon Host](https://bandwagonhost.com/aff.php?aff=575&pid=43).
 
