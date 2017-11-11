@@ -6,5 +6,5 @@
 iptables -t nat -F
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
-echo 'iptables -t nat -F' > /etc/rc.local
-echo 'iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE' > /etc/rc.local
+echo 'iptables -t nat -F' >> /etc/rc.local
+echo 'iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE' >> /etc/rc.local
